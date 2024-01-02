@@ -6,10 +6,9 @@ def read_requirements(file_path:str)->List[str]:
     with open(file_path) as file:
         print("reading requirements")
         requirements=file.readlines()
-        if HYPHEN_E_DOT in requirements:
-            print("found")
-            requirements.remove(HYPHEN_E_DOT)
         requirements=[r.replace("\n","") for r in requirements]
+        if HYPHEN_E_DOT in requirements:
+            requirements.remove(HYPHEN_E_DOT)
         print(requirements)
         return requirements
 
